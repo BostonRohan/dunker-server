@@ -1,11 +1,13 @@
 import express from "express";
 import getTweets from "../controllers/tweets.js";
-import createUser from "../controllers/createUser.js";
+import createUser from "../controllers/auth/createUser.js";
+import loginUser from "../controllers/auth/loginUser.js";
 
 const router = express.Router();
 
 //auth
 router.post("/quizzes/signup", createUser);
+router.post("/quizzes/login", loginUser);
 
 //tweets
 router.get("/", getTweets);
