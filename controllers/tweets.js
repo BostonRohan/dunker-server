@@ -3,7 +3,7 @@ import needle from "needle";
 //Getting tweets
 const getTweets = async (req, res) => {
   const token = process.env.BEARER_TOKEN;
-  const id = await getID(token);
+  const id = await getID();
   const tweetURL = `https://api.twitter.com/2/users/${id}/tweets`;
   const response = await needle("get", tweetURL, {
     headers: {
