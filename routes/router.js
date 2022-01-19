@@ -3,8 +3,10 @@ import getTweets from "../controllers/tweets.js";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  res.send(await getTweets());
-});
+//auth
+// router.post("/quizzes", auth);
 
-export { router as tweetRoute };
+//tweets
+router.get("/", getTweets);
+
+export default router;

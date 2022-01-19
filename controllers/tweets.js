@@ -1,7 +1,7 @@
 import needle from "needle";
 
 //Getting tweets
-const getTweets = async () => {
+const getTweets = async (req, res) => {
   const token = process.env.BEARER_TOKEN;
   const id = await getID(token);
   const tweetURL = `https://api.twitter.com/2/users/${id}/tweets`;
@@ -10,7 +10,7 @@ const getTweets = async () => {
       Authorization: `Bearer ${token}`,
     },
   });
-  return response.body;
+  res.send(response.body);
 };
 
 //Getting id for woj

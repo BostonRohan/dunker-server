@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import express from "express";
 import cors from "cors";
-import { tweetRoute } from "./routes/tweet.js";
+import router from "./routes/router.js";
 
 dotenv.config();
 
@@ -14,8 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({ origin: "http://localhost:3000" }));
 
 //Routes
-app.use("/", tweetRoute);
-
+app.use(router);
 //Connect to DB
 mongoose
   .connect(process.env.MDB_CONNECT_STRING)
