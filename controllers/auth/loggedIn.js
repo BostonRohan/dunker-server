@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
+import User from "../../models/userModel.js";
 
-const loggedIn = (req, res) => {
+const loggedIn = async (req, res) => {
   try {
     const token = req.cookies.token;
 
@@ -8,7 +9,9 @@ const loggedIn = (req, res) => {
 
     const validatedUser = jwt.verify(token, process.env.JWT_SECRET);
 
-    res.json(validatedUser.id);
+    const { username } = await User.findOne({ id: validatedUser.id });
+
+    res.send(username);
   } catch (err) {
     return res.json(null);
   }
