@@ -9,7 +9,7 @@ const router = express.Router();
 //auth
 router.post("/quizzes/signup", createUser);
 router.post("/quizzes/login", loginUser);
-router.post("/quizzes/", loggedIn);
+router.get("/quizzes/", loggedIn);
 
 //tweets
 router.get("/", getTweets);
