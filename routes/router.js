@@ -11,7 +11,7 @@ const router = express.Router();
 router.post("/quizzes/signup", createUser);
 router.post("/quizzes/login", loginUser);
 router.get("/quizzes/", loggedIn);
-router.post("/quizzes/", logoutUser);
+router.get("/quizzes/", logoutUser);
 
 //tweets
 router.get("/", getTweets);
