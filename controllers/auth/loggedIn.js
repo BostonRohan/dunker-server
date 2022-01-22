@@ -9,7 +9,7 @@ const loggedIn = async (req, res) => {
 
     const validatedUser = jwt.verify(token, process.env.JWT_SECRET);
 
-    const { username } = await User.findOne({ id: validatedUser.id });
+    const { username } = await User.findOne({ _id: validatedUser.id });
 
     res.send(username);
   } catch (err) {
