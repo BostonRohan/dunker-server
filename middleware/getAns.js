@@ -1,7 +1,7 @@
-import { nba } from "../utils/quiz/ans.js";
-import { team } from "../utils/quiz/ans.js";
-import { hard } from "../utils/quiz/ans.js";
-import { player } from "../utils/quiz/ans.js";
+import { nba } from "../utils/ans.js";
+import { team } from "../utils/ans.js";
+import { hard } from "../utils/ans.js";
+import { player } from "../utils/ans.js";
 const getAns = (req, res, next) => {
   const quizName = Object.keys(req.body).join(" ");
   let ans = [];
