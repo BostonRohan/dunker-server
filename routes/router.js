@@ -17,7 +17,7 @@ router.get("/quizzes/logout", logoutUser);
 
 //quizzes
 router.post(
-  ["/quiz/team", "quiz/nba", "quiz/hard", "quiz/player"],
+  ["/quiz/team", "/quiz/nba", "/quiz/hard", "/quiz/player"],
   getAns,
   quiz
 );
