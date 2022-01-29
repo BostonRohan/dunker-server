@@ -1,5 +1,5 @@
 import express from "express";
-import getTweets from "../controllers/tweets.js";
+import getTweets from "../controllers/tweets/tweets.js";
 import createUser from "../controllers/auth/createUser.js";
 import loginUser from "../controllers/auth/loginUser.js";
 import loggedIn from "../controllers/auth/loggedIn.js";
