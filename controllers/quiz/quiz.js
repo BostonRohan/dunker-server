@@ -18,6 +18,6 @@ const quiz = async (req, res) => {
 
   await user.save();
 
-  res.status(200).send(score);
+  res.status(200).send(score.toString());
 };
 export default quiz;
