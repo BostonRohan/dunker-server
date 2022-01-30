@@ -14,8 +14,10 @@ const getAns = (req, res, next) => {
       break;
     case "hard":
       ans = hard;
+      break;
     case "player":
       ans = player;
+      break;
     default:
       ans = [];
   }
