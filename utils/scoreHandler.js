@@ -5,6 +5,6 @@ const scoreHandler = (ans, selected) => {
       score--;
     }
   }
-  return parseFloat(score).toFixed(2) + "%";
+  return score;
 };
 export default scoreHandler;
