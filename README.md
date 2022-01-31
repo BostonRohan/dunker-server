@@ -1,6 +1,6 @@
 # Dunker
 
-[<img src="./Dunker.png">](https://Dunker.vercel.app)
+[<img src="/public/Dunker.png">](https://Dunker.vercel.app)
 
 ## Table of Contents
 
