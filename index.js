@@ -12,7 +12,16 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 //Middleware
-app.use(cors({ origin: "https://dunker.vercel.app", credentials: true }));
+app.use(
+  cors({
+    origin: [
+      "https://dunker.vercel.app",
+      "https://dunker.vercel.app/quizzes",
+      "https://dunker.vercel.app/quiz",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
