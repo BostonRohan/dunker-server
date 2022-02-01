@@ -1,12 +1,10 @@
 import mongoose from "mongoose";
 
-const quizSchema = new mongoose.Schema({
-  team: Array,
-  nba: Array,
-  player: Array,
-  hard: Array,
-});
+const quizSchema = new mongoose.Schema(
+  { team: Array, nba: String, player: Array, hard: Array },
+  { collection: "quiz" }
+);
 
-const Quiz = ("quiz", quizSchema);
+const Quiz = mongoose.model("Quiz", quizSchema);
 
 export default Quiz;
