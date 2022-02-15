@@ -43,8 +43,8 @@ const createUser = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
+      sameSite: "none",
       secure: true,
-      SameSite: "none",
     });
   } catch (err) {
     console.log(err);
