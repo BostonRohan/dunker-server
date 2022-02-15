@@ -1,6 +1,6 @@
 const logoutUser = async (req, res) => {
   try {
-    res.clearCookie("token").send();
+    res.clearCookie("token");
   } catch (err) {
     return res.json(null);
   }
