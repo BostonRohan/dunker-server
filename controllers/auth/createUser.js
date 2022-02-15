@@ -41,7 +41,11 @@ const createUser = async (req, res) => {
     //create jwt token
     const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
 
-    return res.cookie("token", token, { httpOnly: true, secure: true });
+    return res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
   } catch (err) {
     console.log(err);
     return res.status(500);

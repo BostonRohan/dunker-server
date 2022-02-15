@@ -29,7 +29,11 @@ const loginUser = async (req, res) => {
     //create jwt token
     const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET);
 
-    return res.cookie("token", token, { httpOnly: true, secure: true });
+    return res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
   } catch (err) {
     console.log(err);
     res.status(500).send();
