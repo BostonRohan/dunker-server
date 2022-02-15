@@ -41,10 +41,10 @@ const createUser = async (req, res) => {
     //create jwt token
     const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
 
-    return res.cookie("token", token, {
+    res.cookie("token", token, {
       httpOnly: true,
       secure: true,
-      sameSite: "None",
+      sameSite: "none",
     });
   } catch (err) {
     console.log(err);
