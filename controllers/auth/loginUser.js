@@ -29,9 +29,13 @@ const loginUser = async (req, res) => {
     //create jwt token
     const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET);
 
-    return res.cookie("token", token, {
-      httpOnly: true,
-    });
+    //validate user
+    const validatedUser = jwt.verify(token, process.env.JWT_SECRET);
+
+    //pull out the users username
+    const { username } = await User.findOne({ _id: validatedUser.id });
+
+    return res.send(username);
   } catch (err) {
     console.log(err);
     res.status(500).send();
