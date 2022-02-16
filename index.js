@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import express from "express";
 import cors from "cors";
-import cookieParser from "cookie-parser";
 import router from "./routes/router.js";
 
 dotenv.config();
@@ -12,14 +11,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 //Middleware
-app.use(
-  cors({
-    credentials: true,
-    origin: "https://dunker.vercel.app",
-  })
-);
+app.use(cors({ origin: "https://dunker.vercel.app" }));
 app.use(express.json());
-app.use(cookieParser());
 
 //Routes
 app.use(router);
