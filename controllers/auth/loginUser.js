@@ -32,6 +32,8 @@ const loginUser = async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
+        sameSite: "strict",
+        secure: "true",
       })
       .send();
   } catch (err) {
