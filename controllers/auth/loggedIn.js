@@ -11,7 +11,7 @@ const loggedIn = async (req, res) => {
 
     const { username } = await User.findOne({ _id: validatedUser.id });
 
-    res.send(username);
+    return res.send(username);
   } catch (err) {
     return res.json(null);
   }
