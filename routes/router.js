@@ -2,7 +2,6 @@ import express from "express";
 import getTweets from "../controllers/tweets/tweets.js";
 import createUser from "../controllers/auth/createUser.js";
 import loginUser from "../controllers/auth/loginUser.js";
-import loggedIn from "../controllers/auth/loggedIn.js";
 import quiz from "../controllers/quiz/quiz.js";
 import getAns from "../middleware/getAns.js";
 
@@ -11,7 +10,6 @@ const router = express.Router();
 //auth
 router.post("/quizzes/signup", createUser);
 router.post("/quizzes/login", loginUser);
-router.get("/quizzes/", loggedIn);
 
 //quizzes
 router.post(
