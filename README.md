@@ -32,7 +32,6 @@ Dunker is an application for people who love basketball and love to stay updated
 ## Technologies
 
 - bycryptjs: ^2.4.3
-- cookie-parser: ^1.4.6
 - cors: ^2.8.5
 - dotenv: ^11.0.0
 - express: ^4.17.2
