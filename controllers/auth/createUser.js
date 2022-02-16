@@ -1,5 +1,4 @@
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
 import User from "../../models/userModel.js";
 
 const createUser = async (req, res) => {
@@ -36,14 +35,9 @@ const createUser = async (req, res) => {
       password: hash,
     });
 
-    const savedUser = await newUser.save();
+    await newUser.save();
 
-    //create jwt token
-    const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
-
-    return res.cookie("token", token, {
-      httpOnly: true,
-    });
+    return res.sendStatus(200);
   } catch (err) {
     console.log(err);
     return res.status(500);
