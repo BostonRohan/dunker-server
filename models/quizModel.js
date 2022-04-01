@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const quizSchema = new mongoose.Schema({
   team: Array,
-  nba: String,
+  nba: Array,
   player: Array,
   hard: Array,
 });
