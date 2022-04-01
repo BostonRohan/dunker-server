@@ -49,7 +49,7 @@ Dunker is an application for people who love basketball and love to stay updated
 To run this project locally, install it using npm:
 
 ```
-$ cd ../Dunker/backend
+$ cd ./dunker-server
 $ npm install
 $ npm run dev
 ```
